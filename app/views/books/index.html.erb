@@ -1,2 +1,14 @@
 <h1>Books</h1>
+<%= form_with url: "/books/create", local: true do |f| %>
 
+  <h2>New book</h2>
+
+  <!--<form class="new_book" id="new_book" action="/books" accept-charest="UTF-8" method="post">-->
+
+  <!--</form>-->
+    <h4>Title</h4>
+      <p><%= f.text_field :title %></p>
+    <h4>Body</h4>
+      <p><%= f.text_field :body %></p>
+      <p><%= f.submit "Create Book" %></p>
+<% end %>
