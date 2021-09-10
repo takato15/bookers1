@@ -6,18 +6,25 @@ class BooksController < ApplicationController
   def new
   end
 
+ def edit
+ end
+
+ def destroy
+ end
+
   def show
-    @books = Book.where(id: params[:id])
+    @books = Book.new
   end
 
   def create
-    Book.create(title: params[:title], body: params[:body])
+    book = Book.new(book_params)
+    book.save
     redirect_to '/show'
   end
 
   private
 
   def book_params
-    # params.require(:book).permit(:title, :body)
+    params.require(:book).permit(:title, :body)
   end
 end
