@@ -2,10 +2,12 @@
   Book was successfilly create.
   Book was successfilly updated.
 
+  <% @books.where do |book| %>
     <p>
-      Title:
+      Title:<%= book[:title] %>
     </p>
     <p>
-      Body:
+      Body:<%= book[:body] %>
     </p>
+  <% end %>
 </div>

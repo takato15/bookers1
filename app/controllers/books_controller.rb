@@ -1,14 +1,13 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
+    # @books = Book.all
   end
 
   def new
   end
 
   def show
-    # @book = Book.title
-    # @book = Book.body
+    @books = Book.where(id: params[:id])
   end
 
   def create
